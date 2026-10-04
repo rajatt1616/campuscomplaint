@@ -1,0 +1,445 @@
+[ {
+  "id" : "CMP-0001",
+  "title" : "Cold food at breakfast every day",
+  "description" : "Breakfast items at the mess are served cold since last week. Multiple students have complained informally but nothing has changed.",
+  "category" : "MESS",
+  "priority" : "MEDIUM",
+  "status" : "IN_PROGRESS",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-003",
+  "assignedToName" : "Mess Authority",
+  "createdAt" : "2026-10-02T20:54:19.996571Z",
+  "updatedAt" : "2026-10-04T10:14:17.733763700Z",
+  "deadlineAt" : "2026-10-07T10:14:17.733763700Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ {
+    "authorId" : "U-003",
+    "authorName" : "Mess Authority",
+    "role" : "DEPARTMENT",
+    "text" : "on it",
+    "createdAt" : "2026-10-04T10:12:58.094230600Z"
+  }, {
+    "authorId" : "U-001",
+    "authorName" : "Rajat Tyagi",
+    "role" : "STUDENT",
+    "text" : "Rejected: the  food is still cold",
+    "createdAt" : "2026-10-04T10:14:17.733763700Z"
+  } ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Mess Authority",
+    "at" : "2026-10-04T09:59:47.026070400Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Mess Authority",
+    "note" : "Work started",
+    "at" : "2026-10-04T10:13:05.781413300Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Mess Authority",
+    "note" : "Marked as resolved",
+    "at" : "2026-10-04T10:13:11.798512600Z"
+  }, {
+    "from" : "RESOLVED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Resolution rejected by complainant",
+    "at" : "2026-10-04T10:14:17.733763700Z"
+  } ]
+}, {
+  "id" : "CMP-0002",
+  "title" : "Hostel washroom light not working",
+  "description" : "The second-floor washroom light in Block C has been out for three days. It is unsafe at night.",
+  "category" : "HOSTEL",
+  "priority" : "HIGH",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-004",
+  "assignedToName" : "Hostel Warden",
+  "createdAt" : "2026-10-01T20:54:19.996571Z",
+  "updatedAt" : "2026-10-03T20:54:19.998089400Z",
+  "deadlineAt" : "2026-10-06T20:54:19.998089400Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Hostel Warden",
+    "at" : "2026-10-03T20:54:19.998089400Z"
+  } ]
+}, {
+  "id" : "CMP-0003",
+  "title" : "Lab machines too slow for DB practicals",
+  "description" : "Computers in the DB lab take almost ten minutes to boot and Practical 4 cannot be completed in the allotted slot.",
+  "category" : "ACADEMICS",
+  "priority" : "MEDIUM",
+  "status" : "IN_PROGRESS",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-09-30T20:54:19.996571Z",
+  "updatedAt" : "2026-10-03T20:54:19.999118900Z",
+  "deadlineAt" : "2026-10-06T20:54:19.999118900Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Academic Office",
+    "note" : "Under inspection",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  } ]
+}, {
+  "id" : "CMP-0004",
+  "title" : "Broken desk in lecture hall L-204",
+  "description" : "Second-row desk has a broken top and is unusable. Seat allocation forces students to share.",
+  "category" : "INFRASTRUCTURE",
+  "priority" : "LOW",
+  "status" : "CLOSED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-09-29T20:54:19.996571Z",
+  "updatedAt" : "2026-10-04T10:02:42.080252800Z",
+  "deadlineAt" : null,
+  "closedAt" : "2026-10-04T10:02:42.080252800Z",
+  "reopenDeadlineAt" : "2026-10-06T10:02:42.080252800Z",
+  "remarks" : [ {
+    "authorId" : "U-005",
+    "authorName" : "Academic Office",
+    "role" : "DEPARTMENT",
+    "text" : "New desk installed, please verify and accept.",
+    "createdAt" : "2026-10-03T00:54:19.996571Z"
+  } ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Academic Office",
+    "note" : "Carpenter notified",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Academic Office",
+    "note" : "Desk replaced",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "RESOLVED",
+    "to" : "CLOSED",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Accepted by complainant",
+    "at" : "2026-10-04T10:02:42.080252800Z"
+  } ]
+}, {
+  "id" : "CMP-0005",
+  "title" : "Duplicate charge in lab fee receipt",
+  "description" : "Receipt shows lab fee charged twice for this semester. Attached scan available with the office.",
+  "category" : "ACADEMICS",
+  "priority" : "URGENT",
+  "status" : "CLOSED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-09-27T20:54:19.996571Z",
+  "updatedAt" : "2026-10-03T20:54:19.999118900Z",
+  "deadlineAt" : null,
+  "closedAt" : "2026-10-03T08:54:19.996571Z",
+  "reopenDeadlineAt" : "2026-10-04T20:54:19.996571Z",
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Academic Office",
+    "note" : "Checked accounts",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Academic Office",
+    "note" : "Refund initiated",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "RESOLVED",
+    "to" : "CLOSED",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Accepted by complainant",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  } ]
+}, {
+  "id" : "CMP-0006",
+  "title" : "Water cooler on floor 3 not cooling",
+  "description" : "The water cooler outside the reading room has stopped cooling since Monday.",
+  "category" : "INFRASTRUCTURE",
+  "priority" : "HIGH",
+  "status" : "REOPENED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-004",
+  "assignedToName" : "Hostel Warden",
+  "createdAt" : "2026-10-01T20:54:19.996571Z",
+  "updatedAt" : "2026-10-03T20:54:19.999118900Z",
+  "deadlineAt" : "2026-10-06T20:54:19.996571Z",
+  "closedAt" : "2026-10-02T14:54:19.996571Z",
+  "reopenDeadlineAt" : "2026-10-04T20:54:19.996571Z",
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Hostel Warden",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Hostel Warden",
+    "note" : "Technician scheduled",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Hostel Warden",
+    "note" : "Filter replaced",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "RESOLVED",
+    "to" : "CLOSED",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Accepted by complainant",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  }, {
+    "from" : "CLOSED",
+    "to" : "REOPENED",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Issue recurred â€” reopened",
+    "at" : "2026-10-03T20:54:19.999118900Z"
+  } ]
+}, {
+  "id" : "CMP-0007",
+  "title" : "ac is not working in 211",
+  "description" : "the ac is not working and wall clock is broken too",
+  "category" : "INFRASTRUCTURE",
+  "priority" : "HIGH",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-10-04T10:14:55.623310100Z",
+  "updatedAt" : "2026-10-04T10:15:37.013649600Z",
+  "deadlineAt" : "2026-10-07T10:15:37.013649600Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-04T10:15:37.013649600Z"
+  } ]
+}, {
+  "id" : "CMP-0008",
+  "title" : "Canteen queue too long at lunch",
+  "description" : "Every day the lunch queue crosses 30 minutes and the slot ends before we get food.",
+  "category" : "MESS",
+  "priority" : "HIGH",
+  "status" : "RESOLVED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-003",
+  "assignedToName" : "Mess Authority",
+  "createdAt" : "2026-10-04T10:45:06.253462500Z",
+  "updatedAt" : "2026-10-04T12:30:15.324892300Z",
+  "deadlineAt" : "2026-10-10T18:29:59Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Mess Authority",
+    "at" : "2026-10-04T10:45:06.400539600Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Mess Authority",
+    "note" : "Work started",
+    "at" : "2026-10-04T12:30:12.132606700Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Mess Authority",
+    "note" : "Marked as resolved",
+    "at" : "2026-10-04T12:30:15.324892300Z"
+  } ]
+}, {
+  "id" : "CMP-0009",
+  "title" : "ac not working in buses",
+  "description" : "ac does not work in bus number 9136",
+  "category" : "OTHERS",
+  "priority" : "HIGH",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-10-04T10:50:15.687582900Z",
+  "updatedAt" : "2026-10-04T10:53:08.247201400Z",
+  "deadlineAt" : "2026-10-07T18:29:59Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-04T10:53:08.247201400Z"
+  } ]
+}, {
+  "id" : "CMP-0010",
+  "title" : "ac not working in b us",
+  "description" : "ac does not work in bus number 9136",
+  "category" : "OTHERS",
+  "priority" : "HIGH",
+  "status" : "CLOSED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-003",
+  "assignedToName" : "Mess Authority",
+  "createdAt" : "2026-10-04T10:51:25.006185200Z",
+  "updatedAt" : "2026-10-04T12:29:11.499689200Z",
+  "deadlineAt" : null,
+  "closedAt" : "2026-10-04T12:29:11.499689200Z",
+  "reopenDeadlineAt" : "2026-10-06T12:29:11.499689200Z",
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Mess Authority",
+    "at" : "2026-10-04T10:52:52.937628200Z"
+  }, {
+    "from" : "ASSIGNED",
+    "to" : "IN_PROGRESS",
+    "actorName" : "Mess Authority",
+    "note" : "Work started",
+    "at" : "2026-10-04T11:16:12.228977900Z"
+  }, {
+    "from" : "IN_PROGRESS",
+    "to" : "RESOLVED",
+    "actorName" : "Mess Authority",
+    "note" : "Marked as resolved",
+    "at" : "2026-10-04T11:16:13.731912300Z"
+  }, {
+    "from" : "RESOLVED",
+    "to" : "CLOSED",
+    "actorName" : "Rajat Tyagi",
+    "note" : "Accepted by complainant",
+    "at" : "2026-10-04T12:29:11.499689200Z"
+  } ]
+}, {
+  "id" : "CMP-0011",
+  "title" : "Gym water cooler broken",
+  "description" : "The water cooler near the gymnasium has not been dispensing water since two days now.",
+  "category" : "INFRASTRUCTURE",
+  "priority" : "MEDIUM",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-10-04T11:11:53.506560500Z",
+  "updatedAt" : "2026-10-04T11:11:53.543613400Z",
+  "deadlineAt" : "2026-10-07T11:11:53.506560500Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-04T11:11:53.543613400Z"
+  } ]
+}, {
+  "id" : "CMP-0012",
+  "title" : "demo complaint",
+  "description" : "demo complaint 1 ...",
+  "category" : "ACADEMICS",
+  "priority" : "URGENT",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-10-04T11:14:57.609526100Z",
+  "updatedAt" : "2026-10-04T11:15:38.300415500Z",
+  "deadlineAt" : "2026-10-07T11:14:57.609526100Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-04T11:15:38.300415500Z"
+  } ]
+}, {
+  "id" : "CMP-0013",
+  "title" : "Projector in room B-101 dead",
+  "description" : "The classroom projector shows no signal since morning and the next lecture needs it badly.",
+  "category" : "ACADEMICS",
+  "priority" : "HIGH",
+  "status" : "ASSIGNED",
+  "createdById" : "U-001",
+  "createdByName" : "Rajat Tyagi",
+  "assignedToId" : "U-005",
+  "assignedToName" : "Academic Office",
+  "createdAt" : "2026-10-04T11:45:25.146379200Z",
+  "updatedAt" : "2026-10-04T11:45:25.253293300Z",
+  "deadlineAt" : "2026-10-07T11:45:25.146379200Z",
+  "closedAt" : null,
+  "reopenDeadlineAt" : null,
+  "remarks" : [ ],
+  "history" : [ {
+    "from" : "FILED",
+    "to" : "ASSIGNED",
+    "actorName" : "Registrar Office",
+    "note" : "Assigned to Academic Office",
+    "at" : "2026-10-04T11:45:25.253293300Z"
+  } ]
+} ]

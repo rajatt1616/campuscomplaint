@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: campuscomplaint
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /login
+    envVars:
+      - key: SPRING_THEMLEAF_CACHE
+        value: "true"

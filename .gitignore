@@ -1,0 +1,24 @@
+# Build output
+target/
+*.class
+
+# Node / Tailwind build tooling
+node_modules/
+npm-debug.log*
+
+# Logs & temp files
+*.log
+*.err
+*.tmp
+
+# IDE / editor
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS junk
+.DS_Store
+Thumbs.db

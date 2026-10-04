@@ -1,0 +1,120 @@
+[ {
+  "id" : "N-00001",
+  "userId" : "U-003",
+  "complaintId" : "CMP-0008",
+  "message" : "CMP-0008 assigned to you — due 10 Oct 2026, 23:59",
+  "createdAt" : "2026-10-04T10:45:06.404103100Z",
+  "read" : true
+}, {
+  "id" : "N-00002",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0008",
+  "message" : "CMP-0008 assigned to Mess Authority",
+  "createdAt" : "2026-10-04T10:45:06.405620Z",
+  "read" : true
+}, {
+  "id" : "N-00003",
+  "userId" : "U-003",
+  "complaintId" : "CMP-0010",
+  "message" : "CMP-0010 assigned to you — due 08 Oct 2026, 23:59",
+  "createdAt" : "2026-10-04T10:52:52.940224300Z",
+  "read" : true
+}, {
+  "id" : "N-00004",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0010",
+  "message" : "CMP-0010 assigned to Mess Authority",
+  "createdAt" : "2026-10-04T10:52:52.940224300Z",
+  "read" : true
+}, {
+  "id" : "N-00005",
+  "userId" : "U-005",
+  "complaintId" : "CMP-0009",
+  "message" : "CMP-0009 assigned to you — due 07 Oct 2026, 23:59",
+  "createdAt" : "2026-10-04T10:53:08.249737800Z",
+  "read" : true
+}, {
+  "id" : "N-00006",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0009",
+  "message" : "CMP-0009 assigned to Academic Office",
+  "createdAt" : "2026-10-04T10:53:08.250760800Z",
+  "read" : true
+}, {
+  "id" : "N-00007",
+  "userId" : "U-005",
+  "complaintId" : "CMP-0011",
+  "message" : "CMP-0011 assigned to you — due 07 Oct 2026, 16:41",
+  "createdAt" : "2026-10-04T11:11:53.553353600Z",
+  "read" : true
+}, {
+  "id" : "N-00008",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0011",
+  "message" : "CMP-0011 assigned to Academic Office",
+  "createdAt" : "2026-10-04T11:11:53.554865900Z",
+  "read" : true
+}, {
+  "id" : "N-00009",
+  "userId" : "U-005",
+  "complaintId" : "CMP-0012",
+  "message" : "CMP-0012 assigned to you — due 07 Oct 2026, 16:44",
+  "createdAt" : "2026-10-04T11:15:38.300928Z",
+  "read" : true
+}, {
+  "id" : "N-00010",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0012",
+  "message" : "CMP-0012 assigned to Academic Office",
+  "createdAt" : "2026-10-04T11:15:38.300928Z",
+  "read" : true
+}, {
+  "id" : "N-00011",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0010",
+  "message" : "Mess Authority started working on CMP-0010",
+  "createdAt" : "2026-10-04T11:16:12.230021Z",
+  "read" : true
+}, {
+  "id" : "N-00012",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0010",
+  "message" : "CMP-0010 marked resolved — verify and accept",
+  "createdAt" : "2026-10-04T11:16:13.732923900Z",
+  "read" : true
+}, {
+  "id" : "N-00013",
+  "userId" : "U-005",
+  "complaintId" : "CMP-0013",
+  "message" : "CMP-0013 assigned to you — due 07 Oct 2026, 17:15",
+  "createdAt" : "2026-10-04T11:45:25.267993900Z",
+  "read" : true
+}, {
+  "id" : "N-00014",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0013",
+  "message" : "CMP-0013 assigned to Academic Office",
+  "createdAt" : "2026-10-04T11:45:25.272931400Z",
+  "read" : true
+}, {
+  "id" : "N-00015",
+  "userId" : "U-003",
+  "complaintId" : "CMP-0010",
+  "message" : "Student accepted the resolution of CMP-0010",
+  "createdAt" : "2026-10-04T12:29:11.503301100Z",
+  "read" : false
+}, {
+  "id" : "N-00016",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0008",
+  "message" : "Mess Authority started working on CMP-0008",
+  "createdAt" : "2026-10-04T12:30:12.134128200Z",
+  "read" : false
+}, {
+  "id" : "N-00017",
+  "userId" : "U-001",
+  "complaintId" : "CMP-0008",
+  "message" : "CMP-0008 marked resolved — verify and accept",
+  "createdAt" : "2026-10-04T12:30:15.326409300Z",
+  "read" : false
+} ]

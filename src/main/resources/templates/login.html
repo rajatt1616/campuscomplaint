@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Sign in')}"></head>
+<body class="flex min-h-screen items-center justify-center bg-page px-4">
+
+<main class="w-full max-w-[400px]">
+    <div class="mb-8 text-center">
+        <div class="mb-4 flex justify-center">
+            <img th:src="@{/img/logo-mark.svg}" alt="CampusComplaint" class="h-12 w-12 rounded-lg">
+        </div>
+        <h1 class="text-3xl font-bold text-ink">CampusComplaint</h1>
+        <p class="mt-2 text-base text-muted">File. Assign. Resolve. Verify.</p>
+    </div>
+
+    <div th:if="${error}"
+         class="mb-4 rounded-lg border border-danger/30 bg-danger/5 px-4 py-3 text-sm font-medium text-danger"
+         th:text="${error}">Error</div>
+
+    <div class="rounded-lg border border-border bg-card p-6">
+        <h2 class="mb-6 text-lg font-semibold text-ink">Sign in</h2>
+        <form th:action="@{/login}" method="post" class="space-y-4">
+            <div>
+                <label for="email" class="mb-1.5 block text-sm font-semibold text-ink">College email</label>
+                <input type="email" id="email" name="email" required autofocus
+                       placeholder="you@srmist.edu"
+                       class="h-10 w-full rounded-md border border-border px-3 text-base text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30">
+            </div>
+            <div>
+                <label for="password" class="mb-1.5 block text-sm font-semibold text-ink">Password</label>
+                <input type="password" id="password" name="password" required
+                       placeholder="••••••••"
+                       class="h-10 w-full rounded-md border border-border px-3 text-base text-ink placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30">
+            </div>
+            <button type="submit"
+                    class="h-10 w-full rounded-lg bg-primary px-4 text-sm font-semibold text-white transition hover:bg-primary-hover">Sign in</button>
+        </form>
+    </div>
+
+    <div class="mt-6 rounded-lg border border-border bg-card p-4 text-xs text-muted">
+        <div class="mb-2 font-semibold text-ink">Demo accounts</div>
+        <div class="space-y-1">
+            <div>Student — rajat@student.srmist.edu / student123</div>
+            <div>Admin — admin@srmist.edu / admin123</div>
+            <div>Department — mess@srmist.edu / dept123</div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

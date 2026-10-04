@@ -1,0 +1,39 @@
+[ {
+  "type" : "STUDENT",
+  "id" : "U-001",
+  "name" : "Rajat Tyagi",
+  "email" : "rajat@student.srmist.edu",
+  "passwordHash" : "703b0a3d6ad75b649a28adde7d83c6251da457549263bc7ff45ec709b0a8448b",
+  "role" : "STUDENT"
+}, {
+  "type" : "ADMIN",
+  "id" : "U-002",
+  "name" : "Registrar Office",
+  "email" : "admin@srmist.edu",
+  "passwordHash" : "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+  "role" : "ADMIN"
+}, {
+  "type" : "DEPARTMENT",
+  "id" : "U-003",
+  "name" : "Mess Authority",
+  "email" : "mess@srmist.edu",
+  "passwordHash" : "245b342eb00576ef2efc99304125cffdd9bd6c27e0ac63812cd4211915606dd2",
+  "department" : "Mess",
+  "role" : "DEPARTMENT"
+}, {
+  "type" : "DEPARTMENT",
+  "id" : "U-004",
+  "name" : "Hostel Warden",
+  "email" : "hostel@srmist.edu",
+  "passwordHash" : "245b342eb00576ef2efc99304125cffdd9bd6c27e0ac63812cd4211915606dd2",
+  "department" : "Hostel",
+  "role" : "DEPARTMENT"
+}, {
+  "type" : "DEPARTMENT",
+  "id" : "U-005",
+  "name" : "Academic Office",
+  "email" : "academics@srmist.edu",
+  "passwordHash" : "245b342eb00576ef2efc99304125cffdd9bd6c27e0ac63812cd4211915606dd2",
+  "department" : "Academics",
+  "role" : "DEPARTMENT"
+} ]

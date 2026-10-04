@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Dashboard')}"></head>
+<body class="min-h-screen bg-page font-sans text-ink">
+
+<nav th:replace="~{fragments/layout :: sidebar('dashboard')}"></nav>
+
+<main class="ml-60 min-h-screen px-8 py-8">
+    <div th:replace="~{fragments/layout :: flash}"></div>
+
+    <div class="mb-8 flex items-end justify-between">
+        <div>
+            <div class="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted">
+                <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+                <span th:text="${currentUser.role}">STUDENT</span>
+            </div>
+            <h1 class="text-2xl font-bold text-ink"
+                th:text="${page == 'admin'} ? 'All Complaints' : (${page == 'department'} ? 'Assigned Queue' : 'My Complaints')">My Complaints</h1>
+            <div class="mt-3 h-1 w-12 rounded-full bg-accent"></div>
+        </div>
+        <a th:if="${currentUser.student}" href="/complaints/new"
+           class="inline-flex h-10 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-white transition hover:bg-primary-hover">+ File Complaint</a>
+    </div>
+
+    <div class="mb-8 grid grid-cols-4 gap-4">
+        <div th:each="s : ${stats}" class="rounded-lg border border-border bg-card p-6">
+            <div class="text-xs font-semibold uppercase tracking-wide text-muted" th:text="${s['label']}">Label</div>
+            <div class="mt-2 text-2xl font-bold text-ink" th:text="${s['value']}">0</div>
+        </div>
+    </div>
+
+    <div class="overflow-hidden rounded-lg border border-border bg-card">
+        <table class="w-full text-left text-sm">
+            <thead>
+            <tr class="border-b border-border">
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">ID</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Title</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Category</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Priority</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Status</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Updated</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">Due</th>
+                <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted"
+                    th:if="${currentUser.admin}">Assign</th>
+                <th class="px-6 py-3"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="c : ${complaints}" class="border-b border-border transition last:border-0 hover:bg-surface">
+                <td class="px-6 py-3 font-semibold text-primary" th:text="${c.id}">CMP-0001</td>
+                <td class="max-w-[280px] truncate px-6 py-3 font-medium text-ink" th:text="${c.title}">Title</td>
+                <td class="px-6 py-3 text-muted" th:text="${c.category.label}">Mess</td>
+                <td class="px-6 py-3 font-medium text-ink" th:text="${c.priority.label}">Medium</td>
+                <td class="px-6 py-3">
+                    <span th:replace="~{fragments/layout :: badge(${c.status})}">Filed</span>
+                </td>
+                <td class="px-6 py-3 text-muted" th:text="${fmt.shortDate(c.updatedAt)}">01 Jan</td>
+                <td class="px-6 py-3">
+                    <span th:if="${c.deadlineAt != null}" class="text-xs font-semibold"
+                          th:classappend="${fmt.isOverdue(c.deadlineAt)} ? 'text-danger' : (${fmt.isDueSoon(c.deadlineAt)} ? 'text-warning' : 'text-muted')"
+                          th:title="${fmt.date(c.deadlineAt)}"
+                          th:text="${fmt.countdown(c.deadlineAt)}">2d 4h left</span>
+                    <span th:if="${c.deadlineAt == null}" class="text-muted">&mdash;</span>
+                </td>
+                <td class="px-6 py-3" th:if="${currentUser.admin}">
+                    <form th:if="${c.status.name() == 'FILED'}" th:action="@{'/complaints/' + ${c.id} + '/assign'}"
+                          method="post" class="flex items-center gap-2">
+                        <select name="departmentUserId"
+                                class="h-9 rounded-md border border-border bg-card px-2 text-sm text-ink focus:border-primary focus:outline-none">
+                            <option th:each="d : ${departments}" th:value="${d.id}" th:text="${d.department}">Mess</option>
+                        </select>
+                        <button type="submit"
+                                class="h-9 rounded-lg bg-primary px-3 text-xs font-semibold text-white transition hover:bg-primary-hover">Assign</button>
+                    </form>
+                    <span th:if="${c.status.name() != 'FILED'}" class="text-xs text-muted"
+                          th:text="${c.assignedToName != null} ? ${c.assignedToName} : '—'">—</span>
+                </td>
+                <td class="px-6 py-3 text-right">
+                    <a th:href="@{'/complaints/' + ${c.id}}"
+                       class="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-ink transition hover:bg-page">View</a>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(complaints)}">
+                <td th:colspan="${currentUser.admin ? 9 : 8}" class="px-6 py-12 text-center text-base text-muted">
+                    Nothing here yet.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

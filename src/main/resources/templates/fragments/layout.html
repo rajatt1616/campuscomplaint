@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} + ' · CampusComplaint'">CampusComplaint</title>
+    <link rel="icon" type="image/svg+xml" th:href="@{/img/logo-mark.svg}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+
+<div th:fragment="flash">
+    <div th:if="${success}"
+         class="mb-4 flex items-center gap-2 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm font-medium text-success">
+        <span class="inline-block h-2 w-2 rounded-full bg-success"></span>
+        <span th:text="${success}">Saved.</span>
+    </div>
+    <div th:if="${error}"
+         class="mb-4 flex items-center gap-2 rounded-lg border border-danger/30 bg-danger/5 px-4 py-3 text-sm font-medium text-danger">
+        <span class="inline-block h-2 w-2 rounded-full bg-danger"></span>
+        <span th:text="${error}">Error.</span>
+    </div>
+</div>
+
+<nav th:fragment="sidebar(active)"
+     class="fixed inset-y-0 left-0 flex w-60 flex-col border-r border-border bg-card">
+    <div class="relative flex h-16 items-center gap-2 border-b border-border px-3">
+        <button type="button" id="notifToggle" aria-label="Notifications"
+                class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted transition hover:bg-page hover:text-ink">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+            </svg>
+            <span th:if="${unreadCount > 0}"
+                  class="absolute -right-1 -top-1 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-danger px-1 text-xs font-semibold text-white"
+                  th:text="${unreadCount}">0</span>
+        </button>
+        <img th:src="@{/img/logo-mark.svg}" alt="CampusComplaint" class="h-8 w-8 shrink-0 rounded-lg">
+        <span class="min-w-0 truncate text-base font-bold text-ink">CampusComplaint</span>
+        <div id="notifPanel"
+             class="hidden absolute left-3 top-full z-30 mt-1 w-52 rounded-lg border border-border bg-card p-2 shadow-[0_4px_16px_rgba(24,24,27,0.08)]">
+            <div th:each="n : ${notifications}">
+                <a th:href="@{'/complaints/' + ${n.complaintId}}"
+                   class="block rounded-lg px-3 py-2 transition"
+                   th:classappend="${!n.read} ? 'bg-surface' : ''">
+                    <div class="text-xs font-semibold"
+                         th:classappend="${!n.read} ? 'text-ink' : 'text-muted'"
+                         th:text="${n.message}">Message</div>
+                    <div class="mt-0.5 text-xs text-muted" th:text="${fmt.shortDate(n.createdAt)}">date</div>
+                </a>
+            </div>
+            <div th:if="${#lists.isEmpty(notifications)}" class="px-3 py-2 text-xs text-muted">No notifications yet.</div>
+            <form th:if="${unreadCount > 0}" th:action="@{/notifications/read}" method="post" class="mt-1 border-t border-border pt-1">
+                <button type="submit"
+                        class="w-full rounded-lg px-3 py-2 text-left text-xs font-semibold text-primary transition hover:bg-surface">Mark all as read</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="flex-1 space-y-1 px-3 py-4">
+        <a th:if="${currentUser.student}"
+           th:href="@{/dashboard/student}"
+           th:classappend="${active == 'dashboard'} ? 'bg-surface text-primary' : 'text-muted hover:bg-page hover:text-ink'"
+           class="block rounded-lg px-3 py-2 text-sm font-semibold transition">Dashboard</a>
+        <a th:if="${currentUser.admin}"
+           th:href="@{/dashboard/admin}"
+           th:classappend="${active == 'dashboard'} ? 'bg-surface text-primary' : 'text-muted hover:bg-page hover:text-ink'"
+           class="block rounded-lg px-3 py-2 text-sm font-semibold transition">Dashboard</a>
+        <a th:if="${currentUser.isDepartment()}"
+           th:href="@{/dashboard/department}"
+           th:classappend="${active == 'dashboard'} ? 'bg-surface text-primary' : 'text-muted hover:bg-page hover:text-ink'"
+           class="block rounded-lg px-3 py-2 text-sm font-semibold transition">My Queue</a>
+
+        <a th:if="${currentUser.student}"
+           th:href="@{/complaints/new}"
+           th:classappend="${active == 'new'} ? 'bg-surface text-primary' : 'text-muted hover:bg-page hover:text-ink'"
+           class="block rounded-lg px-3 py-2 text-sm font-semibold transition">File Complaint</a>
+
+        <a th:href="@{/search}"
+           th:classappend="${active == 'search'} ? 'bg-surface text-primary' : 'text-muted hover:bg-page hover:text-ink'"
+           class="block rounded-lg px-3 py-2 text-sm font-semibold transition">Search</a>
+    </div>
+
+    <div class="border-t border-border px-4 py-4">
+        <div class="text-sm font-semibold text-ink" th:text="${currentUser.name}">Name</div>
+        <div class="mb-3 text-xs text-muted" th:text="${currentUser.email}">email</div>
+        <a href="/logout"
+           class="block rounded-lg border border-border px-3 py-2 text-center text-sm font-semibold text-ink transition hover:bg-page">Logout</a>
+    </div>
+
+    <script>
+        (function () {
+            var toggle = document.getElementById('notifToggle');
+            var panel = document.getElementById('notifPanel');
+            if (!toggle || !panel) return;
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                panel.classList.toggle('hidden');
+            });
+            document.addEventListener('click', function () {
+                panel.classList.add('hidden');
+            });
+            panel.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        })();
+    </script>
+</nav>
+
+<span th:fragment="badge(status)"
+      th:class="'inline-flex h-[22px] items-center rounded-lg bg-surface px-2 text-xs font-semibold ' + ${status.name() == 'CLOSED' or status.name() == 'AUTO_CLOSED' ? (status.name() == 'CLOSED' ? 'text-success' : 'text-muted') : (status.name() == 'RESOLVED' or status.name() == 'IN_PROGRESS' ? 'text-warning' : (status.name() == 'REOPENED' ? 'text-accent' : 'text-primary'))}"
+      th:text="${status.label}">Filed</span>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "campuscomplaint-ui",
+  "private": true,
+  "scripts": {
+    "css": "tailwindcss -i ./tailwind/input.css -o ./src/main/resources/static/css/styles.css",
+    "css:watch": "tailwindcss -i ./tailwind/input.css -o ./src/main/resources/static/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
