@@ -146,3 +146,26 @@ CLOSED→surface/muted, REOPENED→surface/accent text).
   `h-8 w-8` (sidebar) or `h-12 w-12` (login, error pages). Letter tiles rendered
   as text spans are forbidden — always use the asset. No other colors inside
   the SVG.
+
+## 11. Responsive (mobile-first)
+
+Breakpoints: Tailwind defaults — `sm` 640px, `lg` 1024px. **Desktop
+(≥1024px) must stay pixel-identical to the §7 layout.**
+
+- **Sidebar ≥1024:** fixed 240px as §7. **<1024:** off-canvas drawer
+  (`-translate-x-full`, slides in via hamburger), closed by scrim tap or
+  tapping a nav link.
+- **Mobile top bar <1024:** fixed `h-14`, `z-30`, bg `card`, border-b —
+  hamburger + logo + brand + notification bell (panel anchors `right-3
+  top-full`). Scrim: `bg-ink/40` — the only overlay color allowed.
+- **Content offset:** `px-4 pt-16 pb-8` on mobile (pt clears the top bar,
+  leaves an 8px gap) → `lg:ml-60 lg:px-8 lg:py-8`.
+- **Stat cards:** `grid-cols-2` → `lg:grid-cols-4`.
+  **Detail page:** single column → `lg:grid-cols-[1fr_320px]`.
+- **Tables:** outer wrapper keeps `overflow-hidden rounded-lg`, add inner
+  `overflow-x-auto`, table gets `min-w-[900px]` (9-col) / `min-w-[720px]`
+  (7-col) — swipe to scroll, never squash columns below readable width.
+- **Heading rows:** add `flex-wrap gap-4` so action buttons drop below the
+  title. **Search filter row:** `flex-wrap`.
+- **new.html** category/priority pair: `grid-cols-1 sm:grid-cols-2`.
+- Touch targets: buttons stay `h-10` (40px) minimum.

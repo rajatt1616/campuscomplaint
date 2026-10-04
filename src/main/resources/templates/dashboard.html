@@ -4,11 +4,12 @@
 <body class="min-h-screen bg-page font-sans text-ink">
 
 <nav th:replace="~{fragments/layout :: sidebar('dashboard')}"></nav>
+<header th:replace="~{fragments/layout :: mobilebar}"></header>
 
-<main class="ml-60 min-h-screen px-8 py-8">
+<main class="min-h-screen px-4 pb-8 pt-16 lg:ml-60 lg:px-8 lg:py-8">
     <div th:replace="~{fragments/layout :: flash}"></div>
 
-    <div class="mb-8 flex items-end justify-between">
+    <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
             <div class="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted">
                 <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
@@ -22,7 +23,7 @@
            class="inline-flex h-10 items-center rounded-lg bg-primary px-4 text-sm font-semibold text-white transition hover:bg-primary-hover">+ File Complaint</a>
     </div>
 
-    <div class="mb-8 grid grid-cols-4 gap-4">
+    <div class="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <div th:each="s : ${stats}" class="rounded-lg border border-border bg-card p-6">
             <div class="text-xs font-semibold uppercase tracking-wide text-muted" th:text="${s['label']}">Label</div>
             <div class="mt-2 text-2xl font-bold text-ink" th:text="${s['value']}">0</div>
@@ -30,7 +31,8 @@
     </div>
 
     <div class="overflow-hidden rounded-lg border border-border bg-card">
-        <table class="w-full text-left text-sm">
+        <div class="overflow-x-auto">
+        <table class="w-full min-w-[900px] text-left text-sm">
             <thead>
             <tr class="border-b border-border">
                 <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">ID</th>
@@ -87,6 +89,7 @@
             </tr>
             </tbody>
         </table>
+        </div>
     </div>
 </main>
 

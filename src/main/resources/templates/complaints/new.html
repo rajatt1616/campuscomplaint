@@ -4,8 +4,9 @@
 <body class="min-h-screen bg-page font-sans text-ink">
 
 <nav th:replace="~{fragments/layout :: sidebar('new')}"></nav>
+<header th:replace="~{fragments/layout :: mobilebar}"></header>
 
-<main class="ml-60 min-h-screen px-8 py-8">
+<main class="min-h-screen px-4 pb-8 pt-16 lg:ml-60 lg:px-8 lg:py-8">
     <div th:replace="~{fragments/layout :: flash}"></div>
 
     <div class="mx-auto max-w-[640px]">
@@ -32,7 +33,7 @@
                          th:text="${errors['title']}">Title error</div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
                         <label for="category" class="mb-1.5 block text-sm font-semibold text-ink">Category</label>
                         <select id="category" name="category" required

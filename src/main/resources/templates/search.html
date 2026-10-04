@@ -4,8 +4,9 @@
 <body class="min-h-screen bg-page font-sans text-ink">
 
 <nav th:replace="~{fragments/layout :: sidebar('search')}"></nav>
+<header th:replace="~{fragments/layout :: mobilebar}"></header>
 
-<main class="ml-60 min-h-screen px-8 py-8">
+<main class="min-h-screen px-4 pb-8 pt-16 lg:ml-60 lg:px-8 lg:py-8">
     <div th:replace="~{fragments/layout :: flash}"></div>
 
     <div class="mb-8">
@@ -18,7 +19,7 @@
     </div>
 
     <form th:action="@{/search}" method="get" class="mb-6 rounded-lg border border-border bg-card p-4">
-        <div class="flex items-end gap-3">
+        <div class="flex flex-wrap items-end gap-3">
             <div class="flex-1">
                 <label for="keyword" class="mb-1.5 block text-sm font-semibold text-ink">Keyword</label>
                 <input type="text" id="keyword" name="keyword" th:value="${keyword}"
@@ -49,7 +50,8 @@
     </form>
 
     <div class="overflow-hidden rounded-lg border border-border bg-card">
-        <table class="w-full text-left text-sm">
+        <div class="overflow-x-auto">
+        <table class="w-full min-w-[720px] text-left text-sm">
             <thead>
             <tr class="border-b border-border">
                 <th class="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-muted">ID</th>
@@ -81,6 +83,7 @@
             </tr>
             </tbody>
         </table>
+        </div>
     </div>
 </main>
 
